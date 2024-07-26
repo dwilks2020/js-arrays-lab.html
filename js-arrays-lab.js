@@ -145,7 +145,17 @@ Complete Exercise 11 in the space below:
 const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 const odds = [];
 
+
+// Using forEach to iterate through the nums array
+nums.forEach(num => {
+    if (num % 2 !== 0) {
+        odds.push(num);
+    }
+});
+
 console.log('Exercise 11 result:', odds);
+
+
 
 /*
 Exercise 12: FizzBuzz with arrays
@@ -165,13 +175,38 @@ Exercise 12: FizzBuzz with arrays
 
 Complete Exercise 12 in the space below:
 */
+let fizz = [];
+let fizzBuzz=[];
+let buzz=[];
+
+nums.forEach(num => {
+   if (num % 3 == 0)  {
+       fizz.push(num);
+   }
+});
 
 
+nums.forEach(num => {
+   if (num % 5 == 0) {
+       buzz.push(num);
+   }
+});
+
+
+nums.forEach(num => {
+   if (num % 2 == 0) 
+      {fizzBuzz.push(num); }
+});
+
+nums.forEach(num => {
+   if (num % 5 == 0) 
+      {fizzBuzz.push(num); }
+});
 
 console.log('Exercise 12 Results:');
 console.log('  fizz:', fizz);
 console.log('  buzz:', buzz);
-console.log('  fizzbuzz:', fizzbuzz);
+console.log('  fizzBuzz:', fizzBuzz);
 
 /*
 Exercise 13: Retrieve the Last Array
@@ -183,14 +218,17 @@ Exercise 13: Retrieve the Last Array
    - Do not alter the original `numArrays` array.
 
 Complete Exercise 13 in the space below:
-*/
 
+*/
 const numArrays = [
 	[100, 5, 23],
 	[15, 21, 72, 9],
 	[45, 66],
 	[7, 81, 90]
 ];
+
+let numList = numArrays[numArrays.length - 1];
+
 
 console.log('Exercise 13 result:', numList);
 
@@ -204,10 +242,10 @@ Exercise 14: Accessing within nested arrays
 
 Complete Exercise 14 in the space below:
 */
-
-
+const num= numArrays[2][1];
 
 console.log('Exercise 14 result:', num);
+
 
 /*
 Exercise 15: Nested array sum
@@ -223,5 +261,20 @@ Complete Exercise 15 in the space below:
 */
 
 
+let total = 0;
 
-console.log('Exercise 15 result:\n', total);
+for (let i = 0; i < numArrays.length; i++) {
+    for (let j = 0; j < numArrays[i].length; j++) {
+        total += numArrays[i][j];
+    }
+}
+
+
+console.log(total); //534 =total
+
+
+
+
+//console.log('Exercise 15 result:\n', total);
+
+
